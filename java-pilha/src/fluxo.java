@@ -17,6 +17,12 @@ public class fluxo {
         System.out.println("Ini do metodo2");
         for (int i = 1; i <= 5; i++) {
             System.out.println(i);
+
+            // excecoes mudam o fluxo (é uma bomba que cai em cima da pilha)
+            // entao ele chama se naquele metodo consegue executar o ArithmeticException?
+            // se nao existe, ele joga fora po metodo, mesmo sem te-lo finalizado.
+            // eliminando 1 a 1, a bomba cai no console. Onde visualizamos o rastro da bomba.
+            int a = i / 0;
         }
         System.out.println("Fim do metodo2");
     }
