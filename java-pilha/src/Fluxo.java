@@ -1,3 +1,10 @@
+// UNCHECKED => NAO sao verificados pelo compilador
+// na hora de RODAR é tudo IGUAL, a diferenca é na hora de COMPILAR
+// ou resolve ou avisa que o metodo é perigoso
+
+
+// 2 formas de resolver uma EXCECAO verificada pelo COMPILADOR
+// vc coloca na ASSINATURA ou faz um TRY CATCH
 package src;
 
 // PILHA ou STACK => organizar a execução do código
@@ -15,14 +22,20 @@ public class Fluxo {
         System.out.println("Fim do main");
     }
 
-    private static void metodo1() {
+    // colocar throws MinhaExcecao na ASSINATURA do metodo
+    // pode resolver a excecao OU verificar, como no metodo abaixo,  no compilador
+    private static void metodo1() throws MinhaExcecao {
         System.out.println("Ini do metodo1");
             metodo2();
-        System.out.println("Fim do metodo1");
+            System.out.println("Fim do metodo1");
     }
 
-    private static void metodo2() {
+    // deixar throws MinhaExcecao EXPLICITO para compilar
+    // tem uma excecao na assinatura
+    // ESSE METODO JOGA UMA EXCECAO DO TIPO MinhaExcecao
+    private static void metodo2() throws MinhaExcecao {
         System.out.println("Ini do metodo2");
+        // COMPILADOR VERIFICA QUEM DA THROW NA MINHA EXCECAO
         throw new MinhaExcecao("deu muito ruim"); // so ira funcionar quando criar construtor na classe MinhaExcecao
 
 //        for (int i = 1; i <= 5; i++) { // execucao de lacos
