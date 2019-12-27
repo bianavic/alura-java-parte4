@@ -11,7 +11,7 @@ public class ContaCorrente extends Conta implements Tributavel{
     }
 
     @Override // redefinir o comportamento da classe mae, conta, com override
-    public void saca(double valor) {
+    public void saca(double valor) throws SaldoInsuficienteException {
         double valorASacar = valor + 0.2;
         super.saca(valorASacar);
         }
