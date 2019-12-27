@@ -24,7 +24,11 @@ public class Fluxo {
 
     private static void metodo2() throws MinhaExcecao {
         System.out.println("Ini do metodo2");
+
+//        ArithmeticException exception = new ArithmeticException();
+//        throw exception;
+
         // COMPILADOR VERIFICA QUEM DA THROW NA MINHA EXCECAO
-        throw new MinhaExcecao("deu muito ruim");
+        throw new MinhaExcecao("deu muito ruim"); // codigo simplificado
     }
 }
